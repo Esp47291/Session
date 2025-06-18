@@ -1,22 +1,14 @@
-from abc import ABC, abstractmethod
+Условие:
 
+Добавьте абстрактный класс AbstractProduct, который будет содержать:
 
-class AbstractProduct(ABC):
-    @abstractmethod
-    def get_description(self) -> str:
-        pass
+Абстрактный метод get_description() (должен возвращать строку с описанием товара).
 
+Модифицируйте классы, чтобы они наследовались от AbstractProduct и реализовывали get_description().
 
-class Book(AbstractProduct):
-    def __init__(self, title: str, quantity: int, price: float, author: str):
-        self.title = title
-        self.quantity = quantity
-        self.price = price
-        self.author = author
+Пример использования:
 
-    def get_description(self) -> str:
-        return f"Книга: {self.title}, Автор: {self.author}"
-
-
+```python
 book = Book("Война и мир", 5, 500, "Лев Толстой")
-print(book.get_description())
+print(book.get_description())  # "Книга: Война и мир, Автор: Лев Толстой"
+```
